@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+	<html lang="fr">
+	<% include ./partials/head %>
+	<body>
+		<% include ./partials/header %>
+
+		<div class="central">
+        	<h1><%= movie.movietitle %></h1>
+			<div>
+				<form action="/movie-details/<%= movie._id %>" method="post">
+					<legend>Modifier le film</legend>
+					<label for="movietitle">Titre du film</label>
+					<input type="text" name="movietitle" id="movietitle" value="<%= movie.movietitle %>">
+					<label for="movieyear">Année du film</label>
+					<input type="text" name="movieyear" id="movieyear" value="<%= movie.movieyear %>">
+					<button type="submit">mettre à jour</button>
+				</form>
+			</div>
+		</div>
+
+		<footer>
+			<% include ./partials/footer %>
+		</footer>
+
+	</body>
+</html>
